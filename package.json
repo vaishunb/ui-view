@@ -1,0 +1,15 @@
+{
+  "name": "ui-view",
+  "version": "1.0.0",
+  "main": "server/app.js",
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "engines": {
+    "node": "^4.2.3",
+    "npm": "^2.14.7"
+  },
+  "scripts": {
+    "start": "node server"
+  }
+}
