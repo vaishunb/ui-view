@@ -2,7 +2,7 @@
 <html ng-app="MyApp" ng-strict-di>
 
   <head>
-    <title>my app</title>
+    <title>UI View Demo</title>
     <style>ul { padding-left: 0; } li { list-style: none; }</style>
     <script data-require="angular.js@*"
             src="js/angular.js"></script>
@@ -17,27 +17,14 @@
   <body>
     <ul>
       <li><a href="#/home">home</a>
-      <li><a ui-sref="home.wizard">wizard</a>
-      <li><a ui-sref="home.wizard.what">wizard.what</a>
-      <li><a ui-sref="home.wizard.when">wizard.when</a>
-      <li><a ui-sref="home.wizard.where">wizard.where</a>
+      <li><a ui-sref="page">page</a>
+      <li><a ui-sref="page.about">page.about</a>
+      <li><a ui-sref="page.contact">page.contact</a>
+      <li><a ui-sref="page.help">page.help</a>
 
     </ul>
 
     <div ui-view=""></div>
-
-<script type="text/ng-template" id="tpl.html">
- <div ui-view>
-  <h3>current state name: <var>{{$state.current.name}}</var></h3>
-
-
-  <h5>params</h5>
-  <pre>{{$stateParams | json}}</pre>
-  <h5>state</h5>
-  <pre>{{$state.current | json}}</pre>
-
- </div>
-</script>
 
   </body>
 

@@ -9,44 +9,45 @@ var app = angular
     .state( 'home', {
       url: '/home',
       controller: 'HomeCtrl',
-      templateUrl: 'home/home.tpl.html'
+      templateUrl: 'home/home.html'
     })
 
-    .state("home.wizard", {
-      //url: '/home/wizard',
-      url: '/wizard',
-      controller: 'VendorsCtrl',
-      templateUrl: 'vendors/wizard.tpl.html'
+    .state("page", {
+      //url: '/home/page',
+      url: '/page',
+      parent: 'home',
+      controller: 'PagesCtrl',
+      templateUrl: 'partials/page.html'
     })
 
-    .state( "home.wizard.where",  {
-          //url: '/home/wizard/where',
-          url: '/where',
-          controller: 'VendorsCtrl',
-          templateUrl: 'vendors/wizard-where.tpl.html',
-          //parent: wizard
+    .state( "page.about",  {
+          //url: '/home/page/about',
+          url: '/about',
+          controller: 'PagesCtrl',
+          templateUrl: 'partials/about.html',
+          //parent: page
     })
-    .state( "home.wizard.what",  {
-          //url: '/home/wizard/what',
-          url: '/what',
-          controller: 'VendorsCtrl',
-          templateUrl: 'vendors/wizard-what.tpl.html',
-          //parent: wizard
+    .state( "page.contact",  {
+          //url: '/home/page/contact',
+          url: '/contact',
+          controller: 'PagesCtrl',
+          templateUrl: 'partials/contact.html',
+          //parent: page
     })
-    .state( "home.wizard.when",  {
-          //url: '/home/wizard/when',
-          url: '/when',
-          controller: 'VendorsCtrl',
-          templateUrl: 'vendors/wizard-when.tpl.html',
-          //parent: wizard
+    .state( "page.help",  {
+          //url: '/home/page/help',
+          url: '/help',
+          controller: 'PagesCtrl',
+          templateUrl: 'partials/help.html',
+          //parent: page
     })
 
     // catch all route
     // send users to the form page
-    $urlRouterProvider.otherwise('/home/wizard/where');
+    $urlRouterProvider.otherwise('/home/page/about');
 }])
 .controller('HomeCtrl', ['$scope', function ($scope) { }])
-.controller('VendorsCtrl', ['$scope', function ($scope) { }])
+.controller('PagesCtrl', ['$scope', function ($scope) { }])
 
 .run(['$rootScope', '$state', '$stateParams',
   function ($rootScope, $state, $stateParams) {
